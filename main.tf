@@ -28,9 +28,9 @@ module "dynamodb" {
 
 module "lambda" {
   source = "./modules/lambda"
-  # project-name = var.project-name
-  # environment  = var.environment
-  # tags         = var.tags
+  project-name = var.project-name
+  environment  = var.environment
+  tags         = var.tags
 }
 
 # module "iam" {
