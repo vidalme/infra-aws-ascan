@@ -13,26 +13,22 @@ terraform {
     # dynamodb_table = "terraform-lock-table"  # Replace with your DynamoDB table name
   }
 }
-
-
 provider "aws" {
   region = var.region
 }
-
 module "dynamodb" {
   source       = "./modules/dynamodb"
   project-name = var.project-name
   environment  = var.environment
   tags         = var.tags
 }
-
 module "lambda" {
   source       = "./modules/lambda"
+  ecr_repository_url = var.ecr_repository_url
   project-name = var.project-name
   environment  = var.environment
   tags         = var.tags
 }
-
 # module "iam" {
 #   source = "./modules/iam"
 

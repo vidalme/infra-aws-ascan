@@ -23,3 +23,8 @@ variable "lambda_function_name" {
   type        = string
   default     = "todo_lambda"
 }
+
+variable "ecr_repository_url" {
+  description = "The URL of the ECR repository containing the Lambda function image"
+  type        = string
+}
