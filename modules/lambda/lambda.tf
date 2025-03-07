@@ -22,7 +22,7 @@ resource "aws_lambda_function" "todo_ascan_lambda" {
 
   # Use container image instead of zip file
   package_type = "Image"
-  image_uri    = "${var.ecr_repository_url}:${var.image_tag}"
+  image_uri    = var.ecr_image_uri # Use a complete, valid ECR URI
 
   runtime = null # Not required when using container images
 
