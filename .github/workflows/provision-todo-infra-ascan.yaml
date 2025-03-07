@@ -1,10 +1,14 @@
 name: Create Todo App Infrastructure
 
 on:
+  
   push:
     branches:
-      - main  
-
+      - main
+  
+  repository_dispatch:
+    types: [ascan-image-built]
+    
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -34,3 +38,13 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
+        
+# name: Deploy AScan Image
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Get image details
+#         run: echo "Deploying image with tag ${{ github.event.client_payload.image_tag }}"
+      # Add deployment steps here
