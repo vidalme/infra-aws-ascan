@@ -19,11 +19,11 @@ resource "aws_iam_role" "todo_ascan_iam_for_lambda" {
 resource "aws_lambda_function" "todo_ascan_lambda" {
   function_name = "${var.project-name}-lambda"
   role          = aws_iam_role.todo_ascan_iam_for_lambda.arn
-  
+
   # Use container image instead of zip file
-  package_type  = "Image"
-  image_uri     = "${var.ecr_repository_url}:${var.image_tag}"
-  
+  package_type = "Image"
+  image_uri    = "${var.ecr_repository_url}:${var.image_tag}"
+
   runtime = null # Not required when using container images
 
   environment {
