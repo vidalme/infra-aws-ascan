@@ -10,12 +10,8 @@ variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
 }
-variable "ecr_repository_url" {
-  description = "The URL of the ECR repository containing the Lambda function image"
+
+variable "ecr_image_uri" {
+  description = "The complete URI of the ECR image (e.g., '329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest')"
   type        = string
-}
-variable "image_tag" {
-  description = "The image tag to use for the Lambda function"
-  type        = string
-  default     = "latest"
 }

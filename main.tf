@@ -23,11 +23,11 @@ module "dynamodb" {
   tags         = var.tags
 }
 module "lambda" {
-  source       = "./modules/lambda"
-  ecr_repository_url = var.ecr_repository_url
-  project-name = var.project-name
-  environment  = var.environment
-  tags         = var.tags
+  source             = "./modules/lambda"
+  ecr_image_uri = var.ecr_image_uri
+  project-name       = var.project-name
+  environment        = var.environment
+  tags               = var.tags
 }
 # module "iam" {
 #   source = "./modules/iam"
