@@ -24,8 +24,6 @@ resource "aws_lambda_function" "todo_ascan_lambda" {
   package_type  = "Image"
   image_uri     = "${var.ecr_repository_url}:${var.image_tag}"
   
-  # No handler needed for container images
-  
   runtime = null # Not required when using container images
 
   environment {
