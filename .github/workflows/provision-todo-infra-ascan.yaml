@@ -30,7 +30,8 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Set image uri as TF_VAR
+      - name: Set image URI when triggered by repository dispatch
+        if: github.event_name == 'repository_dispatch'
         run: echo "TF_VAR_image_uri_with_tag=${{ github.event.client_payload.image_uri_with_tag }}" >> $GITHUB_ENV
 
       - name: Terraform Validate
@@ -40,4 +41,4 @@ jobs:
         run: terraform plan -out=tfplan
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan 
+        run: terraform apply -auto-approve tfplan
