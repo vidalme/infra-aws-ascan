@@ -48,9 +48,3 @@ module "lambda" {
   environment        = var.environment
   tags               = var.tags
 }
-# module "iam" {
-#   source = "./modules/iam"
-
-#   lambda_function_name = var.lambda_function_name
-#   rds_arn              = module.rds.rds_arn
-# }
