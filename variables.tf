@@ -27,4 +27,5 @@ variable "tags" {
 variable "ecr_image_uri" {
   description = "The URL of the ECR repository containing the Lambda function image"
   type        = string
+  default = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan"
 }
