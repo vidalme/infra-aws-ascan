@@ -32,8 +32,15 @@ variable "tags" {
 #   type        = string
 # }
 
-variable "ecr_image_uri" {
-  description = "The URL of the ECR repository containing the Lambda function image"
+# variable "ecr_image_uri" {
+#   description = "The URL of the ECR repository containing the Lambda function image"
+#   type        = string
+#   # No default - will use TF_VAR_ecr_image_uri environment variable if set
+#   # default     = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"
+# }
+
+variable "image_uri_with_tag" {
+  description = "The Docker image tag to use"
   type        = string
   default     = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"
 }

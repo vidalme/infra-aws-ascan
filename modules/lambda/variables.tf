@@ -11,10 +11,12 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "ecr_image_uri" {
+variable "image_uri_with_tag" {
   description = "The complete URI of the ECR image (e.g., '329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest')"
   type        = string
 }
+
+
 
 variable "lambda_role_arn" {
   description = "Arn of the IAM role for the Lambda function"

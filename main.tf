@@ -43,10 +43,10 @@ module "lambda" {
   # Pass the IAM role name to the Lambda module
   lambda_role_arn = module.iam.lambda_role_arn
 
-  ecr_image_uri = var.ecr_image_uri
-  project-name  = var.project-name
-  environment   = var.environment
-  tags          = var.tags
+  image_uri_with_tag = var.image_uri_with_tag
+  project-name       = var.project-name
+  environment        = var.environment
+  tags               = var.tags
 }
 # module "iam" {
 #   source = "./modules/iam"

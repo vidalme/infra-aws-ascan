@@ -30,6 +30,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Set image uri as TF_VAR
+        run: echo "TF_VAR_image_uri_with_tag=${{ github.event.client_payload.image_uri_with_tag }}" >> $GITHUB_ENV
+
       - name: Terraform Validate
         run: terraform validate
 
@@ -38,13 +41,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan 
-        
-# name: Deploy AScan Image
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Get image details
-#         run: echo "Deploying image with tag ${{ github.event.client_payload.image_tag }}"
-      # Add deployment steps here
