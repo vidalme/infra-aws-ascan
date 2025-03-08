@@ -16,8 +16,6 @@ variable "image_uri_with_tag" {
   type        = string
 }
 
-
-
 variable "lambda_role_arn" {
   description = "Arn of the IAM role for the Lambda function"
   type        = string
