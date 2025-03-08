@@ -33,11 +33,8 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
 
-      - name: Terraform Plan
-        run: terraform plan -out=tfplan TF_LOG=DEBUG
-
       - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan 
+        run: terraform apply -auto-approve 
         
 # name: Deploy AScan Image
 
