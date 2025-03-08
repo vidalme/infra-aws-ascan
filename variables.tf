@@ -18,11 +18,11 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "lambda_function_name" {
-  description = "The name of the Lambda function"
-  type        = string
-  default     = "todo_lambda"
-}
+
+# variable "lambda_role_arn" {
+#   description = "The ARN of the IAM Lambda Role"
+#   type        = string
+# }
 
 variable "ecr_image_uri" {
   description = "The URL of the ECR repository containing the Lambda function image"

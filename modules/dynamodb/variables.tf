@@ -12,3 +12,8 @@ variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
 }
+
+# variable "table_arn" {
+#   description = "Arn of the table used by the Lambda function"
+#   type        = string
+# }
