@@ -20,11 +20,9 @@ variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
   default = {
-    tags = {
-      "Owner"       = "ascaiano"
-      "Project"     = "todo-ascan"
-      "Environment" = "dev"
-    }
+    "Owner"       = "ascaiano"
+    "Project"     = "todo-ascan"
+    "Environment" = "dev"
   }
 }
 
