@@ -29,13 +29,13 @@ variable "tags" {
 variable "image_uri_with_tag" {
   description = "The complete URI of the ECR image (e.g., '329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest')"
   type        = string
-  # This can or/and will be overwritten by the CI/CD pipeline
+  # Default value should be overwritten by the CI/CD pipeline
   default = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"
 }
 
 variable "table_name" {
   description = "The name of the dynamodb table, it must be passed as env var in the lambda function"
   type        = string
-  # This can or/and will be overwritten by the CI/CD pipeline
+  # Default value should be overwritten by the CI/CD pipeline
   default = "todo-ascan-table"
 }
