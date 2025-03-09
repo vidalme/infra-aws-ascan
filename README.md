@@ -2,6 +2,8 @@
 
 This repository contains the infrastructure for the **AWS Ascan project**.
 
+![alt text](assets/image.png)
+
 ## Introduction
 
 The AWS Ascan project aims to provide a scalable and efficient solution for automated security scanning in AWS environments.
