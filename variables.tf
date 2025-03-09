@@ -26,21 +26,8 @@ variable "tags" {
   }
 }
 
-
-# variable "lambda_role_arn" {
-#   description = "The ARN of the IAM Lambda Role"
-#   type        = string
-# }
-
-# variable "ecr_image_uri" {
-#   description = "The URL of the ECR repository containing the Lambda function image"
-#   type        = string
-#   # No default - will use TF_VAR_ecr_image_uri environment variable if set
-#   # default     = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"
-# }
-
 variable "image_uri_with_tag" {
-  description = "The Docker image tag to use"
+  description = "The complete URI of the ECR image (e.g., '329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest')"
   type        = string
-  default     = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"
+  default     = "329599632133.dkr.ecr.us-east-1.amazonaws.com/ascan:latest"  # Use an appropriate default value
 }

@@ -17,7 +17,7 @@ provider "aws" {
   region = var.region
 }
 
-# Assuming you have a dynamodb module that outputs the table ARN
+# Dynamodb module must output the table ARN
 module "dynamodb" {
   source       = "./modules/dynamodb"
   project-name = var.project-name
@@ -33,7 +33,7 @@ module "iam" {
   tags         = var.tags
 
   # Pass the DynamoDB table ARN to the IAM module
-  dynamodb_table_arn = module.dynamodb.table_arn
+dynamodb_table_arn = module.dynamodb.table_arn
 }
 
 # Lambda module using the IAM role
@@ -43,7 +43,7 @@ module "lambda" {
   # Pass the IAM role name to the Lambda module
   lambda_role_arn = module.iam.lambda_role_arn
 
-  image_uri_with_tag = var.image_uri_with_tag
+image_uri_with_tag = var.image_uri_with_tag
   project-name       = var.project-name
   environment        = var.environment
   tags               = var.tags
