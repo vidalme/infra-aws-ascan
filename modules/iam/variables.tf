@@ -1,18 +1,3 @@
-# variable "lambda_function_name" {
-#   description = "The name of the Lambda function"
-#   type        = string
-# }
-
-# variable "lambda_role_id" {
-#   description = "The ID of the IAM role used by the Lambda function"
-#   type        = string
-# }
-
-# variable "dynamodb_arn" {
-#   description = "The ARN of the DynamoDB table"
-#   type        = string
-# }
-
 variable "project-name" {
   description = "Name of the project"
   type        = string

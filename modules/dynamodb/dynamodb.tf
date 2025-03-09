@@ -3,10 +3,10 @@ resource "aws_dynamodb_table" "todo-ascan-dynamodb" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
-  hash_key       = "TaskId"
+  hash_key       = "id"
 
   attribute {
-    name = "TaskId"
+    name = "id"
     type = "N"
   }
 
@@ -27,10 +27,10 @@ resource "aws_dynamodb_table_item" "todo-ascan-dynamodb-item-1" {
 
   item = <<ITEM
 {
-  "TaskId": {"N": "1"},
-  "Task": {"S": "Learn Python"},
-  "Done": {"BOOL": false},
-  "Priority": {"N": "2"}
+  "id": {"N": "1"},
+  "title": {"S": "Learn Python"},
+  "done": {"BOOL": false},
+  "priority": {"N": "2"}
 }
 ITEM
 }
@@ -41,10 +41,10 @@ resource "aws_dynamodb_table_item" "todo-ascan-dynamodb-item-2" {
 
   item = <<ITEM
 {
-  "TaskId": {"N": "2"},
-  "Task": {"S": "Learn Terraform"},
-  "Done": {"BOOL": false},
-  "Priority": {"N": "3"}
+  "id": {"N": "2"},
+  "title": {"S": "Learn Terraform"},
+  "done": {"BOOL": false},
+  "priority": {"N": "3"}
 }
 ITEM
 }
@@ -55,10 +55,10 @@ resource "aws_dynamodb_table_item" "todo-ascan-dynamodb-item-3" {
 
   item = <<ITEM
 {
-  "TaskId": {"N": "3"},
-  "Task": {"S": "Learn AWS"},
-  "Done": {"BOOL": false},
-  "Priority": {"N": "1"}
+  "id": {"N": "3"},
+  "title": {"S": "Learn AWS"},
+  "done": {"BOOL": false},
+  "priority": {"N": "1"}
 }
 ITEM
 }

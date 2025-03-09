@@ -20,3 +20,8 @@ variable "lambda_role_arn" {
   description = "Arn of the IAM role for the Lambda function"
   type        = string
 }
+
+variable "table_name" {
+  description = "The name of the dynamodb table, it must be passed as env var in the lambda function"
+  type        = string
+}

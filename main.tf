@@ -33,18 +33,23 @@ module "iam" {
   tags         = var.tags
 
   # Pass the DynamoDB table ARN to the IAM module
-dynamodb_table_arn = module.dynamodb.table_arn
+  dynamodb_table_arn = module.dynamodb.table_arn
 }
 
 # Lambda module using the IAM role
 module "lambda" {
   source = "./modules/lambda"
 
-  # Pass the IAM role name to the Lambda module
+  project-name = var.project-name
+  environment  = var.environment
+  tags         = var.tags
+
+  # Pass the IAM role ARN and DynamoDB table name to the Lambda module  
   lambda_role_arn = module.iam.lambda_role_arn
 
-image_uri_with_tag = var.image_uri_with_tag
-  project-name       = var.project-name
-  environment        = var.environment
-  tags               = var.tags
+  # Pass the name of the dynamodb table to the Lambda environment variables
+  table_name = module.dynamodb.table_name
+
+  # Pass the ECR image URI to the Lambda module (it comes from the CI/CD pipeline that builds the image)
+  image_uri_with_tag = var.image_uri_with_tag
 }
