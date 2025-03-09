@@ -15,3 +15,18 @@ resource "aws_lambda_function" "todo_ascan_lambda" {
     }
   }
 }
+
+resource "aws_lambda_function_url" "todo_ascan_lambda_url" {
+  function_name      = aws_lambda_function.todo_ascan_lambda.function_name
+  qualifier          = "todo_ascan_lambda"
+  authorization_type = "AWS_IAM"
+
+  cors {
+    allow_credentials = true
+    allow_origins     = ["*"]
+    allow_methods     = ["*"]
+    allow_headers     = ["date", "keep-alive"]
+    expose_headers    = ["keep-alive", "date"]
+    max_age           = 86400
+  }
+}
