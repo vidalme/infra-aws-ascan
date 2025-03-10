@@ -18,7 +18,7 @@ resource "aws_lambda_function" "todo_ascan_lambda" {
 
 resource "aws_lambda_function_url" "todo_ascan_lambda_url" {
   function_name      = aws_lambda_function.todo_ascan_lambda.function_name
-  authorization_type = "AWS_IAM"
+  authorization_type = "NONE"
 
   cors {
     allow_credentials = true
