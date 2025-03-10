@@ -23,9 +23,9 @@ resource "aws_lambda_function_url" "todo_ascan_lambda_url" {
   cors {
     allow_credentials = true
     allow_origins     = ["*"]
-    allow_methods     = ["*"]
-    allow_headers     = ["date", "keep-alive"]
-    expose_headers    = ["keep-alive", "date"]
+    allow_methods     = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allow_headers     = ["*"]
+    expose_headers    = ["*"]
     max_age           = 86400
   }
 }
